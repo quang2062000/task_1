@@ -10,6 +10,7 @@ exports.getData = async(req,res)=>{
         let totalPage = Math.ceil(totalRecord/limit)
         let getData = await companyModel.find({name:{$regex:textSearch,$options:'i'}}).skip(skip).limit(limit)
         res.send({getData,totalPage})
+        console.log("quanggggggggg")
     } catch (error) {
         res.send(error)
     }
